@@ -1,0 +1,31 @@
+Team,Probability of Making Playoffs,Standard Deviation
+Milwaukee Bucks,0.9893,0.0054
+Indiana Pacers,0.9730,0.0104
+Oklahoma City Thunder,0.9697,0.0119
+Boston Celtics,0.9644,0.0154
+Toronto Raptors,0.9632,0.0106
+Golden State Warriors,0.9616,0.0084
+Denver Nuggets,0.9418,0.0158
+Minnesota Timberwolves,0.8555,0.0228
+Philadelphia 76ers,0.8512,0.0245
+Utah Jazz,0.8434,0.0228
+San Antonio Spurs,0.8365,0.0250
+Portland Trail Blazers,0.7803,0.0175
+Miami Heat,0.7460,0.0332
+New Orleans Pelicans,0.6573,0.0444
+Houston Rockets,0.6499,0.0369
+Los Angeles Lakers,0.6334,0.0388
+Dallas Mavericks,0.6080,0.0277
+Los Angeles Clippers,0.4748,0.0693
+Memphis Grizzlies,0.4566,0.0612
+Brooklyn Nets,0.2192,0.0200
+Detroit Pistons,0.0363,0.0055
+Sacramento Kings,0.0299,0.0037
+Washington Wizards,0.0213,0.0042
+Orlando Magic,0.0211,0.0036
+Charlotte Hornets,0.0170,0.0029
+Phoenix Suns,0.0002,0.0001
+Atlanta Hawks,0.0002,0.0001
+New York Knicks,0.0000,0.0000
+Chicago Bulls,0.0000,0.0000
+Cleveland Cavaliers,0.0000,0.0000

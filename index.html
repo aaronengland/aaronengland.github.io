@@ -96,7 +96,7 @@
 				</div>
 
 				<div class="col-md-6">
-					<p align="justify">These predictions were generated using a <a href="https://keras.io/" style="color:#e74c3c;">Keras Artificial Neural Network model</a> built from win percentage, mean age, and offensive and defensive per game team statistics from the 1973-1974 ABA season season until the 2017-2018 NBA season (1103 teams in total) provided by <a href="https://www.basketball-reference.com/" style="color:#e74c3c;">basketball-reference.com</a>. The optimal number of nodes in the hidden layer was determined by building 30 models on the training data for each of seven [predetermined] possible values of nodes in the hidden layer (210 models in total), computing the mean ROC AUC and precision over the 30 models, and then calculating a mean of the mean ROC AUC and mean precision. After the optimal number of nodes in the hidden layer was determined (66), 100 models and their predicted probabilites from the test data were averaged to compute and visualize ROC AUC and mean precision. Finally, 100 models were fit with 66 nodes in the hidden layer on the current NBA data. From these models, mean probability of postseason and standard deviation were calculated for each team. The code for this model can be found <a href="https://github.com/aaronengland/NN_Nested_Playoffs_Model" style="color:#e74c3c;">here</a></p>
+					<p align="justify">These predictions were generated using a <a href="https://keras.io/" style="color:#e74c3c;">Keras Artificial Neural Network model</a> built from win percentage, mean age, and offensive and defensive per game team statistics from the 1973-1974 ABA season season until the 2017-2018 NBA season (1103 teams in total) provided by <a href="https://www.basketball-reference.com/" style="color:#e74c3c;">basketball-reference.com</a>. The optimal number of nodes in the hidden layer was determined by building 30 models on the training data for each of 90 possible values of nodes in the hidden layer (2700 models in total), computing the mean ROC AUC and precision over the 30 models, and then calculating a mean of the mean ROC AUC and mean precision. After the optimal number of nodes in the hidden layer was determined (2), 100 models and their predicted probabilites from the test data were averaged to compute and visualize ROC AUC and mean precision. Finally, 100 models were fit with 2 nodes in the hidden layer on the current NBA data. From these models, mean probability of postseason and standard deviation were calculated for each team. The code for this model can be found <a href="https://github.com/aaronengland/NN_Nested_Playoffs_Model" style="color:#e74c3c;">here</a></p>
 
 					<p>Classification model evaluation metrics:</p>
 
@@ -112,8 +112,8 @@
 
 					  	<tr>
 						    <td align="left">Actual No</td>
-						    <td align="right">154</td>
-						    <td align="right">13</td>
+						    <td align="right">148</td>
+						    <td align="right">19</td>
 						    <td align="right">167</td>
 					  	</tr>
 
@@ -126,8 +126,8 @@
 
 					  	<tr>
 						    <td align="left">Total</td>
-						    <td align="right">185</td>
 						    <td align="right">179</td>
+						    <td align="right">185</td>
 						    <td align="right">364</td>
 					  	</tr>
 					</table>
@@ -148,16 +148,16 @@
 					  	<tr>
 						    <td align="left">Postseason (no)</td>
 						    <td align="right">0.83</td>
-						    <td align="right">0.92</td>
-						    <td align="right">0.88</td>
+						    <td align="right">0.89</td>
+						    <td align="right">0.86</td>
 						    <td align="right">167</td>
 					  	</tr>
 
 					  	<tr>
 						    <td align="left">Postseason (yes)</td>
-						    <td align="right">0.93</td>
+						    <td align="right">0.90</td>
 						    <td align="right">0.84</td>
-						    <td align="right">0.88</td>
+						    <td align="right">0.87</td>
 						    <td align="right">197</td>
 					  	</tr>
 						
@@ -186,182 +186,182 @@
 					  <tr>
 					    <td align="right">1.</td>
 					    <td>Milwaukee Bucks</td>
-					    <td align="right">0.9601</td>
-					    <td align="right">0.0556</td>
+					    <td align="right">0.9034</td>
+					    <td align="right">0.1965</td>
 					  </tr>
 					  <tr>
 					    <td align="right">2.</td>
 					    <td>Golden State Warriors</td>
-					    <td align="right">0.9467</td>
-					    <td align="right">0.0101</td>
+					    <td align="right">0.9016</td>
+					    <td align="right">0.1855</td>
 					  </tr>
 					  <tr>
 					    <td align="right">3.</td>
-					    <td>Toronto Raptors</td>
-					    <td align="right">0.9240</td>
-					    <td align="right">0.0646</td>
+					    <td>Indiana Pacers</td>
+					    <td align="right">0.9008</td>
+					    <td align="right">0.1818</td>
 					  </tr>
 					  <tr>
 					    <td align="right">4.</td>
-					    <td>Boston Celtics</td>
-					    <td align="right">0.9128</td>
-					    <td align="right">0.0801</td>
+					    <td>Oklahoma City Thunder</td>
+					    <td align="right">0.8982</td>
+					    <td align="right">0.1845</td>
 					  </tr>
 					  <tr>
 					    <td align="right">5.</td>
-					    <td>Denver Nuggets</td>
-					    <td align="right">0.9007</td>
-					    <td align="right">0.0916</td>
+					    <td>Toronto Raptors</td>
+					    <td align="right">0.8938</td>
+					    <td align="right">0.1861</td>
 					  </tr>
 					  <tr>
 					    <td align="right">6.</td>
-					    <td>Indiana Pacers</td>
-					    <td align="right">0.8957</td>
-					    <td align="right">0.1084</td>
+					    <td>Boston Celtics</td>
+					    <td align="right">0.8911</td>
+					    <td align="right">0.1909</td>
 					  </tr>
 					  <tr>
 					    <td align="right">7.</td>
-					    <td>Oklahoma City Thunder</td>
-					    <td align="right">0.8612</td>
-					    <td align="right">0.0978</td>
+					    <td>Denver Nuggets</td>
+					    <td align="right">0.8863</td>
+					    <td align="right">0.1800</td>
 					  </tr>
 					  <tr>
 					  	<td align="right">8.</td>
-					    <td>Utah Jazz</td>
-					    <td align="right">0.8393</td>
-					    <td align="right">0.1163</td>
+					    <td>Philadelphia 76ers</td>
+					    <td align="right">0.8710</td>
+					    <td align="right">0.1832</td>
 					  </tr>
 					  <tr>
 					    <td align="right">9.</td>
-					    <td>Philadelphia 76ers</td>
-					    <td align="right">0.8347</td>
-					    <td align="right">0.1318</td>
+					    <td>Utah Jazz</td>
+					    <td align="right">0.8448</td>
+					    <td align="right">0.1999</td>
 					  </tr>
 					  <tr>
 					    <td align="right">10.</td>
 					    <td>Portland Trail Blazers</td>
-					    <td align="right">0.7051</td>
-					    <td align="right">0.1291</td>
+					    <td align="right">0.7703</td>
+					    <td align="right">0.1963</td>
 					  </tr>
 					  <tr>
 					    <td align="right">11.</td>
 					    <td>Minnesota Timberwolves</td>
-					    <td align="right">0.5827</td>
-					    <td align="right">0.1508</td>
+					    <td align="right">0.7692</td>
+					    <td align="right">0.1635</td>
 					  </tr>
 					  <tr>
 					    <td align="right">12.</td>
-					    <td>Houston Rockets</td>
-					    <td align="right">0.5387</td>
-					    <td align="right">0.2310</td>
+					    <td>San Antonio Spurs</td>
+					    <td align="right">0.7150</td>
+					    <td align="right">0.2283</td>
 					  </tr>
 					  <tr>
 					    <td align="right">13.</td>
-					    <td>San Antonio Spurs</td>
-					    <td align="right">0.5215</td>
-					    <td align="right">0.1800</td>
+					    <td>Los Angeles Lakers</td>
+					    <td align="right">0.6922</td>
+					    <td align="right">0.2159</td>
 					  </tr>
 					  <tr>
 					    <td align="right">14.</td>
-					    <td>Dallas Mavericks</td>
-					    <td align="right">0.4217</td>
-					    <td align="right">0.1383</td>
+					    <td>Miami Heat</td>
+					    <td align="right">0.6442</td>
+					    <td align="right">0.1816</td>
 					  </tr>
 					  <tr>
 					    <td align="right">15.</td>
-					    <td>Los Angeles Lakers</td>
-					    <td align="right">0.3723</td>
-					    <td align="right">0.1479</td>
+					    <td>Houston Rockets</td>
+					    <td align="right">0.6215</td>
+					    <td align="right">0.2236</td>
 					  </tr>
 					  <tr>
 					    <td align="right">16.</td>
-					    <td>Miami Heat</td>
-					    <td align="right">0.3154</td>
-					    <td align="right">0.1298</td>
+					    <td>Dallas Mavericks</td>
+					    <td align="right">0.6063</td>
+					    <td align="right">0.1797</td>
 					  </tr>
 					  <tr>
 					    <td align="right">17.</td>
 					    <td>Brooklyn Nets</td>
-					    <td align="right">0.2933</td>
-					    <td align="right">0.1316</td>
+					    <td align="right">0.4697</td>
+					    <td align="right">0.2189</td>
 					  </tr>
 					  <tr>
 					    <td align="right">18.</td>
 					    <td>New Orleans Pelicans</td>
-					    <td align="right">0.2517</td>
-					    <td align="right">0.1146</td>
+					    <td align="right">0.4687</td>
+					    <td align="right">0.2381</td>
 					  </tr>
 					  <tr>
 					    <td align="right">19.</td>
 					    <td>Los Angeles Clippers</td>
-					    <td align="right">0.1472</td>
-					    <td align="right">0.1038</td>
+					    <td align="right">0.4155</td>
+					    <td align="right">0.2282</td>
 					  </tr>
 					  <tr>
 					    <td align="right">20.</td>
-					    <td>Brooklyn Nets</td>
-					    <td align="right">0.2446</td>
-					    <td align="right">0.0239</td>
+					    <td>Memphis Grizzlies</td>
+					    <td align="right">0.2223</td>
+					    <td align="right">0.1693</td>
 					  </tr>
 					  <tr>
 					    <td align="right">21.</td>
-					    <td>Memphis Grizzlies</td>
-					    <td align="right">0.0860</td>
-					    <td align="right">0.0820</td>
+					    <td>Detroit Pistons</td>
+					    <td align="right">0.1610</td>
+					    <td align="right">0.1561</td>
 					  </tr>
 					  <tr>
 					    <td align="right">22.</td>
-					    <td>Detroit Pistons</td>
-					    <td align="right">0.0787</td>
-					    <td align="right">0.0649</td>
+					    <td>Washington Wizards</td>
+					    <td align="right">0.1172</td>
+					    <td align="right">0.1307</td>
 					  </tr>
 					  <tr>
 					    <td align="right">23.</td>
 					    <td>Charlotte Hornets</td>
-					    <td align="right">0.0492</td>
-					    <td align="right">0.0259</td>
+					    <td align="right">0.0949</td>
+					    <td align="right">0.0572</td>
 					  </tr>
 					  <tr>
 					    <td align="right">24.</td>
-					    <td>Washington Wizards</td>
-					    <td align="right">0.0367</td>
-					    <td align="right">0.0279</td>
+					    <td>Orlando Magic</td>
+					    <td align="right">0.0807</td>
+					    <td align="right">0.0472</td>
 					  </tr>
 					  <tr>
 					    <td align="right">25.</td>
 					    <td>Sacramento Kings</td>
-					    <td align="right">0.0331</td>
-					    <td align="right">0.0229</td>
+					    <td align="right">0.0741</td>
+					    <td align="right">0.0514</td>
 					  </tr>
 					  <tr>
 					    <td align="right">26.</td>
-					    <td>Orlando Magic</td>
-					    <td align="right">0.0193</td>
-					    <td align="right">0.0125</td>
+					    <td>Atlanta Hawks</td>
+					    <td align="right">0.0324</td>
+					    <td align="right">0.0512</td>
 					  </tr>
 					  <tr>
 					    <td align="right">27.</td>
-					    <td>Atlanta Hawks</td>
-					    <td align="right">0.0009</td>
-					    <td align="right">0.0009</td>
+					    <td>Phoenix Suns</td>
+					    <td align="right">0.0304</td>
+					    <td align="right">0.0480</td>
 					  </tr>
 					  <tr>
 					    <td align="right">28.</td>
-					    <td>New York Knicks</td>
-					    <td align="right">0.0001</td>
-					    <td align="right">0.0002</td>
+					    <td>Chicago Bulls</td>
+					    <td align="right">0.0303</td>
+					    <td align="right">0.0481</td>
 					  </tr>
 					  <tr>
 					    <td align="right">29.</td>
-					    <td>Chicago Bulls</td>
-					    <td align="right">0.0001</td>
-					    <td align="right">0.0001</td>
+					    <td>New York Knicks</td>
+					    <td align="right">0.0302</td>
+					    <td align="right">0.0481</td>
 					  </tr>
 					  <tr>
 					    <td align="right">30.</td>
 					    <td>Cleveland Cavaliers</td>
-					    <td align="right">0.0001</td>
-					    <td align="right">0.0001</td>
+					    <td align="right">0.0299</td>
+					    <td align="right">0.0483</td>
 					  </tr>
 					</table>
 
@@ -376,99 +376,100 @@
 					    			x: [
 					    			'Bucks',
 					    			'Warriors',
+					    			'Pacers',
+					    			'Thunder',
 					    			'Raptors',
 					    			'Celtics',
 					    			'Nuggets',
-					    			'Pacers',
-					    			'Thunder',
-					    			'Jazz',
 					    			'76ers',
+					    			'Jazz',
 					    			'Blazers',
 					    			'Timberwolves',
-					    			'Rockets',
 					    			'Spurs',
-					    			'Mavericks',
 					    			'Lakers',
 					    			'Heat',
+					    			'Rockets',
+					    			'Mavericks',
 					    			'Nets',
  									'Pelicans',
  									'Clippers',
  									'Grizzlies',
  									'Pistons',
- 									'Hornets',
  									'Wizards',
- 									'Kings',
+ 									'Hornets',
  									'Magic',
+ 									'Kings',
  									'Hawks',
 									'Suns',
-									'Knicks',
 									'Bulls',
+									'Knicks',
 									'Cavaliers'
 									],
 					    			y: [
-					    			0.9601,
-					    			0.9467,
-					    			0.9240,
-					    			0.9128,
-					    			0.9007,
-					    			0.8957,
-					    			0.8612,
-					    			0.8393,
-					    			0.8347,
-					    			0.7051,
-					    			0.5827,
-					    			0.5387,
-					    			0.5215,
-					    			0.4217,
-					    			0.3723,
-					    			0.3154,
-					    			0.2933,
-					    			0.2517,
-					    			0.1472,
-					    			0.0860,
-					    			0.0787,
-					    			0.0492,
-					    			0.0367,
-					    			0.0331,
-					    			0.0193,
-					    			0.0009,
-					    			0.0002,
-					    			0.0001,
-					    			0.0001
+					    			0.9034,
+					    			0.9016,
+					    			0.9008,
+					    			0.8982,
+					    			0.8938,
+					    			0.8911,
+					    			0.8863,
+					    			0.8710,
+					    			0.8448,
+					    			0.7703,
+					    			0.7692,
+					    			0.7150,
+					    			0.6922,
+					    			0.6442,
+					    			0.6215,
+					    			0.6063,
+					    			0.4697,
+					    			0.4687,
+					    			0.4155,
+					    			0.2223,
+					    			0.1610,
+					    			0.1172,
+					    			0.0949,
+					    			0.0807,
+					    			0.0741,
+					    			0.0324,
+					    			0.0304,
+					    			0.0303,
+					    			0.0302,
+					    			0.0299
 					    			],
 					    			error_y: {
 					    				type: "data",
 					    				array: [
-					    				0.1145,
-					    				0.1111,
-					    				0.1291,
-					    				0.1602,
-					    				0.1832,
-					    				0.2167,
-					    				0.1956,
-					    				0.2326,
-					    				0.2635,
-					    				0.2583,
-					    				0.3016,
-					    				0.4620,
-					    				0.3599,
-					    				0.2767,
-					    				0.2957,
-					    				0.2597,
-					    				0.2631,
-					    				0.2291,
-					    				0.2076,
-					    				0.1640,
-					    				0.1299,
-					    				0.0517,
-					    				0.0557,
-					    				0.0458,
-					    				0.0249,
-					    				0.0017,
-					    				0.0006,
-					    				0.0004,
-					    				0.0002,
-					    				0.0002
+					    				0.3930,
+					    				0.3710,
+					    				0.3635,
+					    				0.3690,
+					    				0.3721,
+					    				0.3818,
+					    				0.3600,
+					    				0.3664,
+					    				0.3998,
+					    				0.3926,
+					    				0.3271,
+					    				0.4565,
+					    				0.4318,
+					    				0.3632,
+					    				0.4473,
+					    				0.3594,
+					    				0.4377,
+					    				0.4763,
+					    				0.4565,
+					    				0.3386,
+					    				0.3122,
+					    				0.2614,
+					    				0.1144,
+					    				0.0944,
+					    				0.1028,
+					    				0.1025,
+					    				0.0961,
+					    				0.0962,
+					    				0.0963,
+					    				0.0967
 					    				],
 					    				visible: true
 					    			},
@@ -477,22 +478,22 @@
 					  					'rgba(0,0,0,0.4)',
 					  					'rgb(231,76,60)',
 					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)',
-
-					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)',
 					  					'rgb(231,76,60)',
 					  					'rgba(0,0,0,0.4)',
+					  					
+					  					'rgba(0,0,0,0.4)',
 					  					'rgb(231,76,60)',
-
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
+					  					'rgba(0,0,0,0.4)',
 					  					'rgb(231,76,60)',
 					  					'rgb(231,76,60)',
 
+					  					'rgb(231,76,60)',
+					  					'rgb(231,76,60)',
+					  					'rgb(231,76,60)',
 					  					'rgba(0,0,0,0.4)',
+					  					'rgb(231,76,60)',
+
+					  					'rgb(231,76,60)',
 					  					'rgba(0,0,0,0.4)',
 					  					'rgb(231,76,60)',
 					  					'rgb(231,76,60)',
@@ -501,8 +502,8 @@
 					  					'rgba(0,0,0,0.4)',
 					  					'rgba(0,0,0,0.4)',
 					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)',
 					  					'rgba(0,0,0,0.4)',
+					  					'rgb(231,76,60)',
 					  					
 					  					'rgba(0,0,0,0.4)',
 					  					'rgb(231,76,60)',

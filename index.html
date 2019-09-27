@@ -67,7 +67,7 @@
 	  <div class="collapse navbar-collapse" id="navbarNav">
 	    <ul class="navbar-nav">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="#NBA">Postseason Probability Model<span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href="#NFL">NFL Weekly Picks<span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="#skills">Skills</a>
@@ -86,443 +86,171 @@
 	</nav>
 
 
-	<div id="NBA" class="section">
+	<div id="NFL" class="section">
 		<div class="container">
 
 			<div class="row">
 
 				<div class="col-md-12">
-					<h4 id="NBARankTitle" align="center">NBA Postseason Probability Model (last update: 02/18/2019)</h4>
+					<h4 id="NFLPicksTitle" align="center">NFL Weekly Picks</h4>
 				</div>
 
-				<div class="col-md-6">
-					<p align="justify">These predictions were generated using an ensemble of 10,000 <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html" style="color:#e74c3c;">RandomizedSearchCV</a> tuned and 5-fold cross-validated <a href="https://xgboost.readthedocs.io/en/latest/" style="color:#e74c3c;">XGBoost classifier</a> models using the <i>neg_log_loss</i> scoring argument built from win percentage, mean age, and offensive and defensive per game team statistics from the 1973-1974 ABA season season until the 2017-2018 NBA season (1103 teams in total) provided by <a href="https://www.basketball-reference.com/" style="color:#e74c3c;">basketball-reference.com</a>. After the 10,000 models were fit on the training data, predicted probabilites on the test data were averaged to construct a confusion matrix and compute/visualize the ROC AUC. Simultaneously, after each of the 10,000 models had been fit, predictions on the current data were generated and averaged. The code for this model can be found <a href="https://github.com/aaronengland/Ensemble_XGBoost_Postseason" style="color:#e74c3c;">here</a></p>
-
-					<p>Classification model evaluation metrics:</p>
-
-					<p><a href="https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/" style="color:#e74c3c;">Confusion Matrix</a></p>
-
-					<table style="width:100%">
-						<tr>
-						    <th></th>
-						    <td align="right">Predicted No</td> 
-						    <td align="right">Predicted Yes</td>
-						    <td align="right">Total</th>
-					  	</tr>
-
-					  	<tr>
-						    <td align="left">Actual No</td>
-						    <td align="right">143</td>
-						    <td align="right">16</td>
-						    <td align="right">159</td>
-					  	</tr>
-
-					  	<tr>
-						    <td align="left">Actual Yes</td>
-						    <td align="right">15</td>
-						    <td align="right">171</td>
-						    <td align="right">186</td>
-					  	</tr>
-
-					  	<tr>
-						    <td align="left">Total</td>
-						    <td align="right">158</td>
-						    <td align="right">187</td>
-						    <td align="right">365</td>
-					  	</tr>
-					</table>
-
-					<br>
-
-					<p><a href="http://joshlawman.com/metrics-classification-report-breakdown-precision-recall-f1/" style="color:#e74c3c;">Classification Report</a></p>
-
-					<table style="width:100%">
-						<tr>
-						    <td></td>
-						    <td align="right">Precision</td>
-						    <td align="right">Recall</td>
-						    <td align="right">F1-Score</td>
-						    <td align="right">Support</td>
-					  	</tr>
-
-					  	<tr>
-						    <td align="left">Postseason (no)</td>
-						    <td align="right">0.905</td>
-						    <td align="right">0.899</td>
-						    <td align="right">0.902</td>
-						    <td align="right">159</td>
-					  	</tr>
-
-					  	<tr>
-						    <td align="left">Postseason (yes)</td>
-						    <td align="right">0.914</td>
-						    <td align="right">0.919</td>
-						    <td align="right">0.917</td>
-						    <td align="right">186</td>
-					  	</tr>
-						
-					</table>
-
-					<br>
-
-					<p><a href="https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5" style="color:#e74c3c;">Receiver Operating Characteristic Curve</a></p>
-
-					<img class="ROCgraph" src="img/ROC_Curve.jpeg">
-
-				</div>
-
-
-				<div class="col-md-6">
-					<table style="width:100%" margin: 0 auto;>
-					  <tr>
-					    <th align="right">Rank</th>
-					    <th>Team</th> 
-					    <th id="Playoffs_Prob">Probability</th>
-					    <th id="Std" align="right">Std</th>
-					  </tr>
-					  <tr>
-					    <td align="right">1.</td>
-					    <td>Indiana Pacers</td>
-					    <td align="right">0.9948</td>
-					    <td align="right">0.0162</td>
-					  </tr>
-					  <tr>
-					    <td align="right">2.</td>
-					    <td>Toronto Raptors</td>
-					    <td align="right">0.9944</td>
-					    <td align="right">0.0156</td>
-					  </tr>
-					  <tr>
-					    <td align="right">3.</td>
-					    <td>Milwaukee Bucks</td>
-					    <td align="right">0.9940</td>
-					    <td align="right">0.0091</td>
-					  </tr>
-					  <tr>
-					    <td align="right">4.</td>
-					    <td>Boston Celtics</td>
-					    <td align="right">0.9922</td>
-					    <td align="right">0.0164</td>
-					  </tr>
-					  <tr>
-					    <td align="right">5.</td>
-					    <td>Golden State Warriors</td>
-					    <td align="right">0.9914</td>
-					    <td align="right">0.0143</td>
-					  </tr>
-					  <tr>
-					    <td align="right">6.</td>
-					    <td>Philadelphia 76ers</td>
-					    <td align="right">0.9907</td>
-					    <td align="right">0.0207</td>
-					  </tr>
-					  <tr>
-					    <td align="right">7.</td>
-					    <td>Oklahoma City Thunder</td>
-					    <td align="right">0.9897</td>
-					    <td align="right">0.0215</td>
-					  </tr>
-					  <tr>
-					  	<td align="right">8.</td>
-					    <td>Utah Jazz</td>
-					    <td align="right">0.9829</td>
-					    <td align="right">0.0268</td>
-					  </tr>
-					  <tr>
-					    <td align="right">9.</td>
-					    <td>Denver Nuggets</td>
-					    <td align="right">0.9761</td>
-					    <td align="right">0.0502</td>
-					  </tr>
-					  <tr>
-					    <td align="right">10.</td>
-					    <td>San Antonio Spurs</td>
-					    <td align="right">0.9600</td>
-					    <td align="right">0.0439</td>
-					  </tr>
-					  <tr>
-					    <td align="right">11.</td>
-					    <td>Portland Trail Blazers</td>
-					    <td align="right">0.9394</td>
-					    <td align="right">0.0743</td>
-					  </tr>
-					  <tr>
-					    <td align="right">12.</td>
-					    <td>Houston Rockets</td>
-					    <td align="right">0.9298</td>
-					    <td align="right">0.0550</td>
-					  </tr>
-					  <tr>
-					    <td align="right">13.</td>
-					    <td>Los Angeles Clippers</td>
-					    <td align="right">0.9111</td>
-					    <td align="right">0.0826</td>
-					  </tr>
-					  <tr>
-					    <td align="right">14.</td>
-					    <td>Minnesota Timberwolves</td>
-					    <td align="right">0.7630</td>
-					    <td align="right">0.1538</td>
-					  </tr>
-					  <tr>
-					    <td align="right">15.</td>
-					    <td>Brooklyn Nets</td>
-					    <td align="right">0.6677</td>
-					    <td align="right">0.1897</td>
-					  </tr>
-					  <tr>
-					    <td align="right">16.</td>
-					    <td>Sacramento Kings</td>
-					    <td align="right">0.5656</td>
-					    <td align="right">0.2323</td>
-					  </tr>
-					  <tr>
-					    <td align="right">17.</td>
-					    <td>Los Angeles Lakers</td>
-					    <td align="right">0.5290</td>
-					    <td align="right">0.2019</td>
-					  </tr>
-					  <tr>
-					    <td align="right">18.</td>
-					    <td>Charlotte Hornets</td>
-					    <td align="right">0.4926</td>
-					    <td align="right">0.1896</td>
-					  </tr>
-					  <tr>
-					    <td align="right">19.</td>
-					    <td>Dallas Mavericks</td>
-					    <td align="right">0.3725</td>
-					    <td align="right">0.2046</td>
-					  </tr>
-					  <tr>
-					    <td align="right">20.</td>
-					    <td>New Orleans Pelicans</td>
-					    <td align="right">0.3662</td>
-					    <td align="right">0.2580</td>
-					  </tr>
-					  <tr>
-					    <td align="right">21.</td>
-					    <td>Orlando Magic</td>
-					    <td align="right">0.3657</td>
-					    <td align="right">0.1968</td>
-					  </tr>
-					  <tr>
-					    <td align="right">22.</td>
-					    <td>Miami Heat</td>
-					    <td align="right">0.3459</td>
-					    <td align="right">0.1774</td>
-					  </tr>
-					  <tr>
-					    <td align="right">23.</td>
-					    <td>Detroit Pistons</td>
-					    <td align="right">0.3371</td>
-					    <td align="right">0.1684</td>
-					  </tr>
-					  <tr>
-					    <td align="right">24.</td>
-					    <td>Washington Wizards</td>
-					    <td align="right">0.2035</td>
-					    <td align="right">0.1490</td>
-					  </tr>
-					  <tr>
-					    <td align="right">25.</td>
-					    <td>Memphis Grizzlies</td>
-					    <td align="right">0.0905</td>
-					    <td align="right">0.0947</td>
-					  </tr>
-					  <tr>
-					    <td align="right">26.</td>
-					    <td>New York Knicks</td>
-					    <td align="right">0.0110</td>
-					    <td align="right">0.0179</td>
-					  </tr>
-					  <tr>
-					    <td align="right">27.</td>
-					    <td>Chicago Bulls</td>
-					    <td align="right">0.0104</td>
-					    <td align="right">0.0210</td>
-					  </tr>
-					  <tr>
-					    <td align="right">28.</td>
-					    <td>Cleveland Cavaliers</td>
-					    <td align="right">0.0101</td>
-					    <td align="right">0.0204</td>
-					  </tr>
-					  <tr>
-					    <td align="right">29.</td>
-					    <td>Atlanta Hawks</td>
-					    <td align="right">0.0091</td>
-					    <td align="right">0.0231</td>
-					  </tr>
-					  <tr>
-					    <td align="right">30.</td>
-					    <td>Phoenix Suns</td>
-					    <td align="right">0.0078</td>
-					    <td align="right">0.0125</td>
-					  </tr>
-					</table>
-
-					<p align="center"><a href="files/Predictions.csv" style="color:#e74c3c;">Download as csv</a></p>
-				</div>
-
-				
 				<div class="col-md-12">
-					<p id="myPlot"></p>
-					<script>
-					    var trace = {
-					    			x: [
-					    			 'Pacers',
-									 'Raptors',
-									 'Bucks',
-									 'Celtics',
-									 'Warriors',
-									 '76ers',
-									 'Thunder',
-									 'Jazz',
-									 'Nuggets',
-									 'Spurs',
-									 'Trail Blazers',
-									 'Rockets',
-									 'Clippers',
-									 'Timberwolves',
-									 'Nets',
-									 'Kings',
-									 'Lakers',
-									 'Hornets',
-									 'Mavericks',
-									 'Pelicans',
-									 'Magic',
-									 'Heat',
-									 'Pistons',
-									 'Wizards',
-									 'Grizzlies',
-									 'Knicks',
-									 'Bulls',
-									 'Cavaliers',
-									 'Hawks',
-									 'Suns'
-									],
-					    			y: [
-					    			 0.9948,
-									 0.9944,
-									 0.9940,
-									 0.9922,
-									 0.9914,
-									 0.9907,
-									 0.9897,
-									 0.9829,
-									 0.9761,
-									 0.9600,
-									 0.9394,
-									 0.9298,
-									 0.9111,
-									 0.7630,
-									 0.6677,
-									 0.5656,
-									 0.5290,
-									 0.4926,
-									 0.3725,
-									 0.3662,
-									 0.3657,
-									 0.3459,
-									 0.3371,
-									 0.2035,
-									 0.0905,
-									 0.0110,
-									 0.0104,
-									 0.0101,
-									 0.0091,
-									 0.0078
-					    			],
-					    			error_y: {
-					    				type: "data",
-					    				array: [
-					    				 0.0325,
-										 0.0311,
-										 0.0182,
-										 0.0328,
-										 0.0285,
-										 0.0414,
-										 0.0430,
-										 0.0535,
-										 0.1004,
-										 0.0878,
-										 0.1486,
-										 0.1101,
-										 0.1652,
-										 0.3077,
-										 0.3793,
-										 0.4645,
-										 0.4039,
-										 0.3792,
-										 0.4092,
-										 0.5160,
-										 0.3936,
-										 0.3549,
-										 0.3369,
-										 0.2979,
-										 0.1894,
-										 0.0358,
-										 0.0421,
-										 0.0409,
-										 0.0462,
-										 0.0250
-					    				],
-					    				visible: true
-					    			},
-					  				type: 'bar',
-					  				marker: {color: [
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)',
-					  					
-					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
+					<p align="justify">These predictions were generated using my <a href="https://github.com/aaronengland/game_predictions" style="color:#e74c3c;">Game Predictions</a> model. The model uses the scores of previous games in the current season to simulate matchups and determine predicted points for each team and the probability of the home team winning. Games for the upcoming week are simulated using the nfl_pickem function from the <a href="https://github.com/aaronengland/nfl_predictions" style="color:#e74c3c;">NFL Predictions</a> library.</p>
 
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
-					  					'rgba(0,0,0,0.4)',
+					<table style="width:100%">
+						<tr>
+						 <td>Week</td>
+						 <td>Home</td>
+						 <td>Away</td>
+						 <td>Home Points</td>
+						 <td>Away Points</td>
+						 <td>Home Win Probability</td>
+						 <td>Winning Team</td>
+						</tr>
 
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)',
-					  					'rgb(231,76,60)',
+						<tr>
+					      <td>4</td>
+					      <td>Green Bay Packers</td>
+					      <td>Philadelphia Eagles</td>
+					      <td>25.2700</td>
+					      <td>24.3880</td>
+					      <td>0.573</td>
+					      <td>Green Bay Packers</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Houston Texans</td>
+					      <td>Carolina Panthers</td>
+					      <td>16.5025</td>
+					      <td>25.0445</td>
+					      <td>0.026</td>
+					      <td>Carolina Panthers</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Miami Dolphins</td>
+					      <td>Los Angeles Chargers</td>
+					      <td>9.0315</td>
+					      <td>30.7630</td>
+					      <td>0.000</td>
+					      <td>Los Angeles Chargers</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>New York Giants</td>
+					      <td>Washington Redskins</td>
+					      <td>22.9475</td>
+					      <td>27.5525</td>
+					      <td>0.182</td>
+					      <td>Washington Redskins</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Atlanta Falcons</td>
+					      <td>Tennessee Titans</td>
+					      <td>20.2160</td>
+					      <td>22.4890</td>
+					      <td>0.318</td>
+					      <td>Tennessee Titans</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Buffalo Bills</td>
+					      <td>New England Patriots</td>
+					      <td>10.5690</td>
+					      <td>29.9345</td>
+					      <td>0.000</td>
+					      <td>New England Patriots</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Baltimore Ravens</td>
+					      <td>Cleveland Browns</td>
+					      <td>13.0280</td>
+					      <td>20.1310</td>
+					      <td>0.043</td>
+					      <td>Cleveland Browns</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Detroit Lions</td>
+					      <td>Kansas City Chiefs</td>
+					      <td>15.5315</td>
+					      <td>22.1630</td>
+					      <td>0.056</td>
+					      <td>Kansas City Chiefs</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Indianapolis Colts</td>
+					      <td>Oakland Raiders</td>
+					      <td>30.4940</td>
+					      <td>18.9735</td>
+					      <td>0.990</td>
+					      <td>Indianapolis Colts</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Los Angeles Rams</td>
+					      <td>Tampa Bay Buccaneers</td>
+					      <td>20.5260</td>
+					      <td>14.4300</td>
+					      <td>0.941</td>
+					      <td>Los Angeles Rams</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Arizona Cardinals</td>
+					      <td>Seattle Seahawks</td>
+					      <td>24.4730</td>
+					      <td>30.4235</td>
+					      <td>0.120</td>
+					      <td>Seattle Seahawks</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Chicago Bears</td>
+					      <td>Minnesota Vikings</td>
+					      <td>11.9055</td>
+					      <td>13.0975</td>
+					      <td>0.348</td>
+					      <td>Minnesota Vikings</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Denver Broncos</td>
+					      <td>Jacksonville Jaguars</td>
+					      <td>13.3920</td>
+					      <td>14.0415</td>
+					      <td>0.440</td>
+					      <td>Jacksonville Jaguars</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>New Orleans Saints</td>
+					      <td>Dallas Cowboys</td>
+					      <td>25.3245</td>
+					      <td>29.5220</td>
+					      <td>0.209</td>
+					      <td>Dallas Cowboys</td>
+					    </tr>
+					    <tr>
+					      <td>4</td>
+					      <td>Pittsburgh Steelers</td>
+					      <td>Cincinnati Bengals</td>
+					      <td>23.4885</td>
+					      <td>23.1360</td>
+					      <td>0.533</td>
+					      <td>Pittsburgh Steelers</td>
+					    </tr>
+					</table>
 
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)',
-					  					
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgba(0,0,0,0.4)',
-					  					'rgb(231,76,60)'
-					  					]}
-									};
+					<br>
 
-						var data = [trace];
+					<br>
 
-						var layout = {
-							title: 'Red: Western Conference, Grey: Eastern Conference',
-							font:{family: 'Raleway, sans-serif'},
-							xaxis: {tickangle: -45},
-							yaxis: {title: 'Probability of Playoffs'},
-						};
-
-						Plotly.newPlot('myPlot', data, layout, {showSendToCloud:true});
-					</script>
 				</div>
-
 				
 			</div>
 
@@ -546,13 +274,12 @@
 				<div class="owl-carousel owl-theme">
 				    
 				    <div class="skill">
-				    	<span class="chart" data-percent="85">
-				    		<span class="percent" style="color:white">85</span>
+				    	<span class="chart" data-percent="90">
+				    		<span class="percent" style="color:white">90</span>
 				    		<canvas height="152" width="152"></canvas>
 				    	</span>
 				    	<h4><a href="https://www.python.org/" style="color:#e74c3c;">Python</a></h4>
-
-				    	<p>Machine learning models and general purpose programming</p>
+				    	<p>Data Science</p>
 				    </div>
 
 				    <div class="skill">
@@ -561,70 +288,25 @@
 				    		<canvas height="152" width="152"></canvas>
 				    	</span>
 				    	<h4><a href="https://www.r-project.org/" style="color:#e74c3c;">R</a></h4>
-				    	<p>Generalized Linear Models and hypothesis testing</p>
+				    	<p>Data Science</p>
 				    </div>
 
 				    <div class="skill">
-				    	<span class="chart" data-percent="25">
-				    		<span class="percent" style="color:white">25</span>
+				    	<span class="chart" data-percent="80">
+				    		<span class="percent" style="color:white">80</span>
 				    		<canvas height="152" width="152"></canvas>
 				    	</span>
-				    	<h4><a href="https://www.javascript.com/" style="color:#e74c3c;">JavaScript</a></h4>
-				    	<p>A new skill I am learning</p>
-				    </div>
-
-				    <div class="skill">
-				    	<span class="chart" data-percent="25">
-				    		<span class="percent" style="color:white">25</span>
-				    		<canvas height="152" width="152"></canvas>
-				    	</span>
-				    	<h4><a href="https://golang.org/" style="color:#e74c3c;">GoLang</a></h4>
-				    	<p>Data Warehousing</p>
-				    </div>
-
-				    <div class="skill">
-				    	<span class="chart" data-percent="40">
-				    		<span class="percent" style="color:white">40</span>
-				    		<canvas height="152" width="152"></canvas>
-				    	</span>
-				    	<h4><a href="https://www.postgresql.org/" style="color:#e74c3c;">PostgreSQL</a></h4>
+				    	<h4><a href="https://www.postgresql.org/" style="color:#e74c3c;">SQL</a></h4>
 				    	<p>Create personal database and query from existing database</p>
 				    </div>
 
 				    <div class="skill">
-				    	<span class="chart" data-percent="70">
-				    		<span class="percent" style="color:white">70</span>
-				    		<canvas height="152" width="152"></canvas>
-				    	</span>
-				    	<h4><a href="https://html.com/" style="color:#e74c3c;">HTML</a></h4>
-				    	<p>Place content on personal webpage</p>
-				    </div>
-
-				    <div class="skill">
-				    	<span class="chart" data-percent="50">
-				    		<span class="percent" style="color:white">50</span>
-				    		<canvas height="152" width="152"></canvas>
-				    	</span>
-				    	<h4><a href="https://www.w3schools.com/css/" style="color:#e74c3c;">CSS</a></h4>
-				    	<p>Style content on personal webpage</p>
-				    </div>
-
-				    <div class="skill">
-				    	<span class="chart" data-percent="60">
+				    	<span class="chart" data-percent="80">
 				    		<span class="percent" style="color:white">60</span>
 				    		<canvas height="152" width="152"></canvas>
 				    	</span>
-				    	<h4><a href="https://plot.ly/products/dash/" style="color:#e74c3c;">Dash</a></h4>
-				    	<p>Web-based interfaces in Python</p>
-				    </div>
-
-				    <div class="skill">
-				    	<span class="chart" data-percent="70">
-				    		<span class="percent" style="color:white">70</span>
-				    		<canvas height="152" width="152"></canvas>
-				    	</span>
-				    	<h4><a href="https://wiki.python.org/moin/TkInter" style="color:#e74c3c;">Tkinter</a></h4>
-				    	<p>GUIs in Python</p>
+				    	<h4><a href="https://julialang.org//" style="color:#e74c3c;">Julia</a></h4>
+				    	<p>Data sciencee</p>
 				    </div>
 
 				</div>
@@ -642,7 +324,6 @@
 		<div class="container">
 
 			<div class="row">
-
 
 				<div class="col-md-3 col-sm-6">
 					<div class="squareItem">
@@ -679,7 +360,7 @@
 								<i class="fab fa-github"></i>
 							</div>
 							<div class="squareContent">
-                                <h2 class="counter">20</h2>
+                                <h2 class="counter">24</h2>
                                 <h3><a href="https://github.com/aaronengland?tab=repositories" style="color:#e74c3c;">GitHub Repositories</a></h3>
                             </div>
 						</div>
@@ -690,15 +371,17 @@
 					<div class="squareItem">
 						<div class="squareInnerContainer">
 							<div class="squareIcon">
-								<i class="fab fa-linkedin"></i>
+								<i class="fas fa-book"></i>
 							</div>
 							<div class="squareContent">
-                                <h2 class="counter">9</h2>
-                                <h3><a href="https://www.linkedin.com/in/aaron-england-ph-d-7617ba149/detail/recent-activity/posts/" style="color:#e74c3c;">LinkedIn Publications</a></h3>
+                                <h2 class="counter">3</h2>
+                                <h3><a href="https://www.amazon.com.au/Master-Data-Science-Python-real-world/dp/1838552863" style="color:#e74c3c;">Book Chapters</a></h3>
                             </div>
 						</div>
 					</div>
 				</div>
+
+
 
 			</div>
 
@@ -724,15 +407,15 @@
 			<div class="row">
 
 				<div class="heading">
-					<h2>PORTFOLIO</h2>
+					<h2>LINKS</h2>
 				</div>
 
 				<div class="filter">
 					<ul id="filters">
 						<li><a href="#" data-filter="*" class="current">ALL</a></li>
-						<li><a href="#" data-filter=".RPackages">R-Packages</a></li>
-						<li><a href="#" data-filter=".Publications">Peer-Reviewed Publications</a></li>
-						<li><a href="#" data-filter=".MLModels">Machine Learning Models</a></li>
+						<li><a href="#" data-filter=".LinkedIn">LinkedIn</a></li>
+						<li><a href="#" data-filter=".Github">Github</a></li>
+						<li><a href="#" data-filter=".Rpubs">RPubs</a></li>
 					</ul>
 				</div>
 
@@ -740,16 +423,15 @@
 				<div class="itemsContainer">
 					<ul class="items">
 
-						<li class="RPackages col-xs-6 col-sm-4 col-md-3 col-lg-3">
+						<li class="LinkedIn col-xs-6 col-sm-4 col-md-4 col-lg-4">
 							<div class="item">
-								<img src="img/portfolio/thumbnails/AutoStepwiseGLM_Square.jpeg">
+								<img src="img/portfolio/linkedin.jpeg">
 
 								<div class="icons">
-									<a href="img/portfolio/AutoStepwiseGLM.jpeg" title="View image" class="openButton" data-fancybox data-caption="AutoStepwiseGLM">
+									<a href="img/portfolio/linkedin.jpeg" title="View image" class="openButton" data-fancybox data-caption="LinkedIn">
 										<i class="fa fa-search"></i>
 									</a>
-
-									<a href="https://cran.r-project.org/web/packages/AutoStepwiseGLM/AutoStepwiseGLM.pdf" target="_blank" class="projectLink">
+									<a href="https://www.linkedin.com/in/aaron-england-ph-d-7617ba149/" target="_blank" class="projectLink">
 										<i class="fa fa-link"></i>
 									</a>
 								</div>
@@ -757,53 +439,15 @@
 							</div>
 						</li>
 
-						<li class="RPackages col-xs-6 col-sm-4 col-md-3 col-lg-3">
+						<li class="Github col-xs-6 col-sm-4 col-md-4 col-lg-4">
 							<div class="item">
-								<img src="img/portfolio/thumbnails/GroupComparisons_Square.jpeg">
-								<div class="icons">
-									<a href="img/portfolio/GroupComparisons.jpeg" title="View image" class="openButton" data-fancybox data-caption="GroupComparisons">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="https://cran.r-project.org/web/packages/GroupComparisons/GroupComparisons.pdf" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="Publications col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-								<img src="img/portfolio/thumbnails/AdolescentEnjoyment_Square.jpeg">
+								<img src="img/portfolio/github.jpeg">
 
 								<div class="icons">
-									<a href="img/portfolio/AdolescentEnjoyment.jpeg" title="View image" class="openButton" data-fancybox data-caption="Adolescent Enjoyment Toward Physical Activity During Alternative Physical Education">
+									<a href="img/portfolio/github.jpeg" title="View image" class="openButton" data-fancybox data-caption="Github">
 										<i class="fa fa-search"></i>
 									</a>
-
-									<a href="https://search.proquest.com/openview/ca95572b2bde9a4dda86854a3f18f12e/1?pq-origsite=gscholar&cbl=40785" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-							</div>
-						</li>
-
-						<li class="Publications col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/AcuteExercise_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/AcuteExercise.jpeg" title="View image" class="openButton" data-fancybox data-caption="Acute Exercise and Academic Achievemnt in elementary School Youth">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="https://search.proquest.com/openview/9836be66d20ac2cfad1d40ff75c92868/1?pq-origsite=gscholar&cbl=40785" target="_blank" class="projectLink">
+									<a href="https://github.com/aaronengland" target="_blank" class="projectLink">
 										<i class="fa fa-link"></i>
 									</a>
 								</div>
@@ -811,168 +455,23 @@
 							</div>
 						</li>
 
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
+						<li class="Rpubs col-xs-6 col-sm-4 col-md-4 col-lg-4">
 							<div class="item">
-
-								<img src="img/portfolio/thumbnails/NNRegressor_Square.jpeg">
+								<img src="img/portfolio/rpubs.jpeg">
 
 								<div class="icons">
-									<a href="img/portfolio/NNRegressor.jpeg" title="View image" class="openButton" data-fancybox data-caption="Neural Network Regressor">
+									<a href="img/portfolio/rpubs.jpeg" title="View image" class="openButton" data-fancybox data-caption="Rpubs">
 										<i class="fa fa-search"></i>
 									</a>
-
-									<a href="http://rpubs.com/aaronengland24/Neural_Net_Regressor" target="_blank" class="projectLink">
+									<a href="https://rpubs.com/aaronengland24" target="_blank" class="projectLink">
 										<i class="fa fa-link"></i>
 									</a>
 								</div>
-
 								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/RandomForestRegressor_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/RandomForestRegressor.jpeg" title="View image" class="openButton" data-fancybox data-caption="Random Forest Regressor">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="http://rpubs.com/aaronengland24/Random_Forest_Regressor" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/NNClassifier_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/NNClassifier.jpeg" title="View image" class="openButton" data-fancybox data-caption="Neural Network Classifier">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="http://rpubs.com/aaronengland24/Neural_Net_Classifier" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/XGBoostClassifier_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/XGBoostClassifier.jpeg" title="View image" class="openButton" data-fancybox data-caption="XGBoost Classifier">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="http://rpubs.com/aaronengland24/XG_Boost_Classifier" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/TPotvsNNRegressor_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/TPotvsNNRegressor.jpeg" title="View image" class="openButton" data-fancybox data-caption="TPot Regressor vs Neural Network Regressor">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="http://rpubs.com/aaronengland24/TPOT_Reg_vs_NN_Reg" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/TimeSeries_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/TimeSeries.jpeg" title="View image" class="openButton" data-fancybox data-caption="Time Series">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="http://rpubs.com/aaronengland24/time_series_ARIMA_price_to_rent_ratio" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/R_to_SQL_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/R_to_SQL.jpeg" title="View image" class="openButton" data-fancybox data-caption="Time Series">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="http://rpubs.com/aaronengland24/R_to_SQL" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
-							</div>
-						</li>
-
-						<li class="MLModels col-xs-6 col-sm-4 col-md-3 col-lg-3">
-							<div class="item">
-
-								<img src="img/portfolio/thumbnails/Py_to_SQL_Square.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/Py_to_SQL.jpeg" title="View image" class="openButton" data-fancybox data-caption="Time Series">
-										<i class="fa fa-search"></i>
-									</a>
-
-									<a href="http://rpubs.com/aaronengland24/Py_SQL_Connect" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-
-								<div class="imageOverlay"></div>
-
 							</div>
 						</li>
 
 					</ul>
-					
 				</div>
 			</div>
 		</div>
@@ -984,7 +483,6 @@
 			<p>&copy; Copyright Aaron England 2019</p>
 		</div>
 	</div>
-
 
 	<script src="js/countUp.js"></script>
 	<script src="js/countUp-jquery.js"></script>

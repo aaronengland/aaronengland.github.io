@@ -92,11 +92,11 @@
 			<div class="row">
 
 				<div class="col-md-12">
-					<h4 id="NFLPicksTitle" align="center">NFL Weekly Picks</h4>
+					<h2 id="NFLPicksTitle" align="center">NFL Weekly Picks</h2>
 				</div>
 
 				<div class="col-md-12">
-					<p align="justify">These predictions were generated using my <a href="https://github.com/aaronengland/game_predictions" style="color:#e74c3c;">Game Predictions</a> model. The model uses the scores of previous games in the current season to simulate matchups and determine predicted points for each team and the probability of the home team winning. Games for the upcoming week are simulated using the nfl_pickem function from the <a href="https://github.com/aaronengland/nfl_predictions" style="color:#e74c3c;">NFL Predictions</a> library.</p>
+					<p align="justify">These predictions were generated using my <a href="https://github.com/aaronengland/game_predictions" style="color:#e74c3c;">Game Predictions</a> model. The model uses the scores of previous games in the current season to simulate matchups and determine predicted points for each team and the probability of the home team winning. Games for the upcoming week are simulated using the nfl_pickem function from the <a href="https://github.com/aaronengland/nfl_predictions" style="color:#e74c3c;">NFL Predictions</a> library (readily available and hosted on my Github).</p>
 
 					<table style="width:100%">
 						<tr>
@@ -279,7 +279,7 @@
 				    		<canvas height="152" width="152"></canvas>
 				    	</span>
 				    	<h4><a href="https://www.python.org/" style="color:#e74c3c;">Python</a></h4>
-				    	<p>Data Science</p>
+				    	<p>Data Science/Programming</p>
 				    </div>
 
 				    <div class="skill">
@@ -297,7 +297,7 @@
 				    		<canvas height="152" width="152"></canvas>
 				    	</span>
 				    	<h4><a href="https://www.postgresql.org/" style="color:#e74c3c;">SQL</a></h4>
-				    	<p>Create personal database and query from existing database</p>
+				    	<p>Data Aggregation</p>
 				    </div>
 
 				    <div class="skill">
@@ -306,7 +306,7 @@
 				    		<canvas height="152" width="152"></canvas>
 				    	</span>
 				    	<h4><a href="https://julialang.org//" style="color:#e74c3c;">Julia</a></h4>
-				    	<p>Data sciencee</p>
+				    	<p>Data Science</p>
 				    </div>
 
 				</div>
@@ -416,6 +416,7 @@
 						<li><a href="#" data-filter=".LinkedIn">LinkedIn</a></li>
 						<li><a href="#" data-filter=".Github">Github</a></li>
 						<li><a href="#" data-filter=".Rpubs">RPubs</a></li>
+						<li><a href="#" data-filter=".MyBook">My Book</a></li>
 					</ul>
 				</div>
 
@@ -423,53 +424,39 @@
 				<div class="itemsContainer">
 					<ul class="items">
 
-						<li class="LinkedIn col-xs-6 col-sm-4 col-md-4 col-lg-4">
+						<li class="LinkedIn col-xs-2 col-sm-2 col-md-2 col-lg-3">
 							<div class="item">
-								<img src="img/portfolio/linkedin.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/linkedin.jpeg" title="View image" class="openButton" data-fancybox data-caption="LinkedIn">
-										<i class="fa fa-search"></i>
-									</a>
-									<a href="https://www.linkedin.com/in/aaron-england-ph-d-7617ba149/" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-								<div class="imageOverlay"></div>
+								<a href="https://www.linkedin.com/in/aaron-england-ph-d-7617ba149/">
+									<img src="img/links/linkedin.png">
+								</a>
 							</div>
 						</li>
 
-						<li class="Github col-xs-6 col-sm-4 col-md-4 col-lg-4">
+						<li class="Github col-xs-2 col-sm-2 col-md-2 col-lg-3">
 							<div class="item">
-								<img src="img/portfolio/github.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/github.jpeg" title="View image" class="openButton" data-fancybox data-caption="Github">
-										<i class="fa fa-search"></i>
-									</a>
-									<a href="https://github.com/aaronengland" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-								<div class="imageOverlay"></div>
+								<a href="https://github.com/aaronengland">
+									<img src="img/links/github.png">
+								</a>
 							</div>
 						</li>
 
-						<li class="Rpubs col-xs-6 col-sm-4 col-md-4 col-lg-4">
+						<li class="Rpubs col-xs-2 col-sm-2 col-md-2 col-lg-3">
 							<div class="item">
-								<img src="img/portfolio/rpubs.jpeg">
-
-								<div class="icons">
-									<a href="img/portfolio/rpubs.jpeg" title="View image" class="openButton" data-fancybox data-caption="Rpubs">
-										<i class="fa fa-search"></i>
-									</a>
-									<a href="https://rpubs.com/aaronengland24" target="_blank" class="projectLink">
-										<i class="fa fa-link"></i>
-									</a>
-								</div>
-								<div class="imageOverlay"></div>
+								<a href="https://rpubs.com/aaronengland24">
+									<img src="img/links/rpubs.png">
+								</a>
 							</div>
 						</li>
+
+
+						<li class="MyBook col-xs-2 col-sm-2 col-md-2 col-lg-3">
+							<div class="item">
+								<a href="https://subscription.packtpub.com/book/data/9781838552862">
+									<img src="img/links/mybook.png">
+								</a>
+							</div>
+						</li>
+
 
 					</ul>
 				</div>
@@ -480,7 +467,12 @@
 
 	<div class="copyrightSection">
 		<div class="col-md-12 text-center">
-			<p>&copy; Copyright Aaron England 2019</p>
+			<p>&copy; Copyright Aaron England <span id="year"></span></p>
+
+			<script>
+		  		document.getElementById("year").innerHTML = new Date().getFullYear();
+		  	</script>
+
 		</div>
 	</div>
 

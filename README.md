@@ -1,4 +1,4 @@
 # aaronengland.github.io
 
-This site can also be reaching using:
+This site can be reached using:
 - www.aaronrengland.com
